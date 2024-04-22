@@ -1,0 +1,16 @@
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.Core.deps.json
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.Core.dll
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.Core.pdb
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.csproj.AssemblyReference.cache
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.AssemblyInfoInputs.cache
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.AssemblyInfo.cs
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.dll
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.pdb
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.Core.runtimeconfig.json
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.Core.runtimeconfig.dev.json
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.dll
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.pdb
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.csproj.CopyComplete
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.Core\obj\Debug\netcoreapp3.1\ProjectNA.Core.genruntimeconfig.cache

@@ -1,0 +1,107 @@
+﻿@page
+@model ProjectNA.Web.Pages.Admin.Clothes.CreateClothessModel
+@{
+}
+
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <div class="col-md-8">
+            <h2>اطلاعات محصول</h2>
+            <hr />
+            <div class="form-group">
+                <label>عنوان محصول</label>
+                <input type="text" asp-for="Clothing.ClothingTitle" class="form-control">
+                <span asp-validation-for="Clothing.ClothingTitle"></span>
+            </div>
+            <div class="form-group">
+                <label>گروه اصلی</label>
+                <select class="form-control" asp-for="Clothing.GroupId" asp-items="@(ViewData["Groups"] as SelectList)"></select>
+                <span asp-validation-for="Clothing.GroupId"></span>
+            </div>
+            <div class="form-group">
+                <label>گروه فرعی</label>
+                <select class="form-control" asp-for="Clothing.SubGroup" asp-items="@(ViewData["SubGroups"] as SelectList)"></select>
+                <span asp-validation-for="Clothing.SubGroup"></span>
+            </div>
+            <div class="form-group">
+                <label>شرح محصول</label>
+                <textarea class="form-control" asp-for="Clothing.ClothingDescription" rows="10"></textarea>
+                <span asp-validation-for="Clothing.ClothingDescription"></span>
+            </div>
+            <div class="form-group">
+                <label>قیمت محصول</label>
+                <input type="number" asp-for="Clothing.ClothingPrice" value="0" class="form-control" />
+                <span asp-validation-for="Clothing.ClothingDescription"></span>
+            </div>
+            <div class="form-group">
+                <label>کلمات کلیدی محصول</label>
+                <input type="text" asp-for="Clothing.Tags" class="form-control">
+                <p class="help-block">کلمات را با - جدا کنید</p>
+                <span asp-validation-for="Clothing.ClothingTitle"></span>
+            </div>
+            <input type="submit" value="ذخیره اطلاعات" class="btn btn-success" />
+        </div>
+        <div class="col-md-4">
+            <p></p>
+            <img id="imgClothing" class="thumbnail" src="/UserAvatar/Defult.jpg" />
+            <div class="form-group">
+
+                <label>انتخاب تصویر</label>
+                <input type="file" name="imgClothingUp" id="imgClothingUp">
+            </div>
+            <div class="form-group">
+                <label>وضعیت محصول</label>
+                <select class="form-control" asp-for="Clothing.StatusId" asp-items="@(ViewData["Statues"] as SelectList)"></select>
+                <span asp-validation-for="Clothing.StatusId"></span>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+        $("#Clothing_GroupId").change(function () {
+            $("#Clothing_SubGroup").empty();
+            $.getJSON("/home/GetSubGroups/" + $("#Clothing_GroupId :selected").val(),
+                function (data) {
+
+                    $.each(data,
+                        function () {
+                            $("#Clothing_SubGroup").append('<option value=' + this.value + '>' + this.text + '</option>');
+
+                        });
+
+                });
+
+
+        });
+
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgClothing').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgClothingUp").change(function () {
+            readURL(this);
+        });
+
+    </script>
+
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+    <script>
+
+        CKEDITOR.replace('Clothing_ClothingDescription', {
+            customConfig: '/js/Config.js'
+        });
+
+    </script>
+}

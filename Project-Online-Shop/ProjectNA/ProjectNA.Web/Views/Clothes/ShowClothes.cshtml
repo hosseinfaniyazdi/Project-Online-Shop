@@ -1,0 +1,132 @@
+﻿@using Microsoft.CodeAnalysis
+@using ProjectNA.Core.Convertors
+@model ProjectNA.DataLayer.Entities.Clothing.Clothing
+@{
+    ViewData["Title"] = Model.ClothingTitle;
+}
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"> فروشگاه لباس NA </a></li>
+            <li class="breadcrumb-item active"><a href="#"> محصولات </a></li>
+            <li class="breadcrumb-item active" aria-current="page"> @Model.ClothingTitle </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <section class="term-content">
+        <header><h1> @Model.ClothingTitle </h1></header>
+        <div class="row">
+
+            <div class="col-md-8 col-sm-12 col-xs-12 pull-left">
+                <section class="term-description">
+                    <img src="/Clothes/image/@Model.ClothingImageName">
+
+                    @Html.Raw(Model.ClothingDescription)
+
+                </section>
+
+                <section class="user-comments">
+                    <header><h3> نظرات کاربران </h3></header>
+                    <div class="inner">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <form asp-controller="Clothes" asp-action="CreateComment"
+                                  data-ajax="true"
+                                  data-ajax-method="post"
+                                  data-ajax-mode="replace"
+                                  data-ajax-update="#listComment"
+                                  data-ajax-success="Success">
+                                <input type="hidden" name="comment.ClothingId" value="@Model.ClothingId" />
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="comment_Comment" name="comment.Comment" placeholder="متن نظر"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-success"> ثبت دیدگاه </button>
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger">جهت درج نظر باید وارد سایت شوید</div>
+                        }
+
+                        <div class="comment-list" id="listComment">
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="col-md-4 col-sm-12 col-xs-12 pull-right">
+                <div class="statistics">
+                    <ul>
+                        <li>
+                            <span> تعداد خرید ها </span>
+                            <i> 0 نفر </i>
+                        </li>
+                    </ul>
+
+                    @if (Model.ClothingPrice != 0)
+                    {
+                        <a href="/Clothes/BuyClothes/@Model.ClothingId"> خرید محصول : @Model.ClothingPrice.ToString("#,0") تومان </a>
+                    }
+                </div>
+
+                <article class="term-info">
+                    <h2> اطلاعات این دوره </h2>
+                    <ul>
+                        <li>وضعیت محصول: @Model.ClothingStatuskClothingStatus.StatusTitle</li>
+                        <li>قیمت : @Model.ClothingPrice.ToString("#,0") تومان</li>
+                        <li>تاریخ ثبت این محصول : @Model.CreateDate.ToShamsi()</li>
+                        <li>آخرین بروزرسانی قیمت محصول : @Model.UpdateDate?.ToShamsi()</li>
+                    </ul>
+                </article>
+
+                <div class="share-layer">
+                    <span> به اشتراک گذاری </span>
+                    <a href=""><i class="zmdi zmdi-facebook"></i></a>
+                    <a href=""><i class="zmdi zmdi-google-old"></i></a>
+                    <a href=""><i class="zmdi zmdi-twitter"></i></a>
+                    <a href=""><i class="zmdi zmdi-linkedin"></i></a>
+                </div>
+
+                @if (Model.Tags != null)
+                {
+                    <div class="tags-layer">
+                        @foreach (string tag in Model.Tags.Split('-', StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            <a href="/Clothes?filter=@tag"> @tag </a>
+                        }
+                    </div>
+                }
+
+            </aside>
+        </div>
+    </section>
+</div>
+
+
+@section Scripts
+{
+    <script src="/js/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        function Success() {
+            $("#comment_Comment").val("");
+        }
+
+        $(function() {
+            $("#listComment").load("/Clothes/ShowComment/" + @Model.ClothingId);
+        });
+
+        function pageComment(pageid) {
+            $("#listComment").load("/Clothes/ShowComment/" + @Model.ClothingId+"?pageId="+pageid);
+        }
+    </script>
+}

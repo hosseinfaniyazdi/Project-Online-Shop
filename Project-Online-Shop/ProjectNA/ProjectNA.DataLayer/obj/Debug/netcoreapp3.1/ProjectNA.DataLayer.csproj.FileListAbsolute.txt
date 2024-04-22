@@ -1,0 +1,13 @@
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.deps.json
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.dll
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.pdb
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.AssemblyInfoInputs.cache
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.AssemblyInfo.cs
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.dll
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.pdb
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.runtimeconfig.json
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\bin\Debug\netcoreapp3.1\ProjectNA.DataLayer.runtimeconfig.dev.json
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.genruntimeconfig.cache
+C:\Users\Hossein\source\repos\ProjectNA\ProjectNA.DataLayer\obj\Debug\netcoreapp3.1\ProjectNA.DataLayer.csproj.AssemblyReference.cache
